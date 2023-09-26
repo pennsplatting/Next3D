@@ -134,7 +134,7 @@ class TriPlaneGenerator(torch.nn.Module):
 
         # Create triplanes by running StyleGAN backbone
         N, M, _ = ray_origins.shape
-        textures = self.texture_backbone.synthesis(texture_ws, update_emas=update_emas, **synthesis_kwargs)
+        textures = self.texture_backbone.synthesis(texture_ws, update_emas=update_emas, **synthesis_kwargs) # generating neural textures
 
         # rasterize to three orthogonal views
         rendering_views = [
